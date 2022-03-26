@@ -4,7 +4,7 @@ Easy WordPress development with Docker and Docker Compose.
 
 With this project you can quickly run the following:
 
-- [WordPress and WP CLI](https://hub.docker.com/_/wordpress/)
+- [WordPress](https://hub.docker.com/_/wordpress/)
 - [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
 - [MySQL](https://hub.docker.com/_/mysql/)
 
@@ -41,12 +41,11 @@ Open a terminal and `cd` to the folder in which `docker-compose.yml` is saved an
 docker-compose up
 ```
 
-This creates two new folders next to your `docker-compose.yml` file.
+This creates new folders next to your `docker-compose.yml` file.
 
-* `wp-data` – used to store and restore database dumps
 * `wp-app` – the location of your WordPress application
 
-The containers are now built and running. You should be able to access the WordPress installation with the configured IP in the browser address. By default it is `http://127.0.0.1`.
+The containers are now built and running. You should be able to access the WordPress installation with url `http://localhost`.
 
 For convenience you may add a new entry into your hosts file.
 
@@ -84,7 +83,7 @@ docker-compose down -v
 
 Copy the `docker-compose.yml` file into a new directory. In the directory you create two folders:
 
-* `wp-data` – here you add the database dump
+* `.docker/mysql/database/` – here you add the database dump
 * `wp-app` – here you copy your existing WordPress code
 
 You can now use the `up` command:
@@ -98,12 +97,6 @@ This will create the containers and populate the database with the given dump. Y
 ```
 define('WP_HOME','http://wp-app.local');
 define('WP_SITEURL','http://wp-app.local');
-```
-
-### Creating database dumps
-
-```
-./export.sh
 ```
 
 ### Developing a Theme
@@ -154,6 +147,8 @@ wp plugin list
 
 ### phpMyAdmin
 
-You can also visit `http://127.0.0.1:8080` to access phpMyAdmin after starting the containers.
+You can also visit `http://localhost:8080` to access phpMyAdmin after starting the containers.
 
 The default username is `root`, and the password is the same as supplied in the `.env` file.
+
+You can accept the website with URL: `http://localhost`
