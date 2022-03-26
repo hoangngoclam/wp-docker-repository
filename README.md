@@ -25,13 +25,13 @@ Make sure to [add your user to the `docker` group](https://docs.docker.com/insta
 
 ## Configuration
 
-Copy the example environment into `.env`
+Run the file setup before run docker-compose
 
 ```
-cp env.example .env
+sh setup.sh
 ```
 
-Edit the `.env` file to change the default IP address, MySQL root password and WordPress database name.
+Edit the file `.env` just creatd to change the MySQL root password and WordPress database name.
 
 ## Installation
 
