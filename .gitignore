@@ -8,3 +8,4 @@ node_modules/
 .env
 
 .docker/mysql/
+.DS_Store
